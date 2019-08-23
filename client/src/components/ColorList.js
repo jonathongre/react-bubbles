@@ -91,14 +91,14 @@ const ColorList = ({ colors, updateColors }) => {
       
       <ul>
         {colors.map(color => (
-          <li key={color.color} onClick={() => editColor(color)}>
-            <span>
-              <span className="delete" onClick={() => deleteColor(color)}>
-                x
+          <li key={color.color}>
+            <span className="delete" onClick={() => deleteColor(color)}>
+                X
               </span>{" "}
+            <span onClick={() => editColor(color)}>
               {color.color}
             </span>
-            <div
+            <div onClick={() => editColor(color)}
               className="color-box"
               style={{ backgroundColor: color.code.hex }}
             />
